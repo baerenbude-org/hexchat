@@ -53,22 +53,26 @@ Ziel des Ports ist es, das vertraute, hochgradig konfigurierbare und performante
 ## 🛠 3. Core Development Principles for AI & Contributors
 
 ### A. C# & .NET 10 Standards
+
 1. **Modern C# 13 Idioms:** File-scoped Namespaces (`namespace HexChat.Core.Parser;`), Primary Constructors, Pattern Matching, Records für unveränderliche Datenmodelle.
 2. **Nullable Reference Types:** Strikte Nullability (`#nullable enable` ist global aktiv). Keine unbegründeten Null-Forgiving Operatoren (`!`).
 3. **High-Performance Parsing:** Im IRC-Message-Parsing-Hotpath Speicherallokationen minimieren (`ReadOnlySpan<char>`, `Memory<char>`, Slice-Operationen statt unnötiger Substrings).
 4. **Asynchronität:** Durchgängig echte Asynchronität (`async`/`await`, `Task`, `ValueTask`, `IAsyncEnumerable<T>`, `CancellationToken`). Niemals `.Result` oder `.Wait()` auf Tasks aufrufen (Deadlock-Gefahr im UI-Thread).
 
 ### B. Avalonia UI & MVVM Best Practices
+
 1. **Compiled Bindings:** Jede AXAML-Datei MUSS `x:DataType="vm:MyViewModel"` deklarieren.
 2. **CommunityToolkit.Mvvm:** Nutzung von `[ObservableProperty]`, `[RelayCommand]` und `ObservableObject`.
 3. **UI Thread Safety:** UI-Updates und ObservableCollections dürfen nur auf dem UI-Thread modifiziert werden (`Dispatcher.UIThread.InvokeAsync` bzw. `Post`).
 4. **Theme & Fluent Design:** Styling über ResourceDictionaries, DynamicResources und ControlThemes; keine festverdrahteten Hex-Farbcodes in Bedienelementen.
 
 ### C. IRC Protokoll & Standardtreue
+
 1. **RFC- & IRCv3-Konformität:** Volle Unterstützung von RFC 1459, RFC 2812 sowie modernen IRCv3 Capabilities (`CAP LS 302`, `sasl`, `message-tags`, `server-time`, `batch`, `echo-message`, `chathistory`).
 2. **Zeichenkodierung:** Standardmäßig UTF-8 mit sicherem Fallback auf ISO-8859-1 / CP1252 bei fehlerhaften Server-Payloads.
 
 ### D. Testing & Qualitätssicherung
+
 1. **Testabdeckung:** Jede neue Parser-Regel, Protokollfunktion oder State-Machine-Änderung MUSS von Unit-Tests in `HexChat.Core.Tests` begleitet werden.
 2. **Deterministische Tests:** Tests dürfen keine echten Netzwerkverbindungen aufbauen (Mocking via NSubstitute oder In-Memory Stream Pipes).
 

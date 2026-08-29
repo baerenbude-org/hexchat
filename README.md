@@ -46,6 +46,7 @@ hexchat/
 ## 🚀 Schnellstart (.NET 10)
 
 ### Voraussetzungen
+
 - [.NET 10.0 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
 - Empfohlen für IDEs: [Antigravity IDE](https://antigravity.google) / VS Code mit der **Avalonia for VS Code** & **C#** Erweiterung
 
@@ -67,6 +68,7 @@ dotnet run --project src/HexChat.Desktop/HexChat.Desktop.csproj
 ## 📜 Lizenz & Danksagung
 
 Dieses Projekt basiert auf **HexChat** und **X-Chat**:
+
 - X-Chat Copyright (c) 1998–2010 Peter Zelezny
 - HexChat Copyright (c) 2009–2024 Berke Viktor und Mitwirkende
 - Avalonia Port (c) 2026 baerenbude-org & Mitwirkende
