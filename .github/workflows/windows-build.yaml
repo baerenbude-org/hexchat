@@ -78,14 +78,14 @@ jobs:
         shell: cmd
 
       - name: Upload Installer Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: installer-${{ matrix.arch }}
           path: HexChat*.exe
           if-no-files-found: warn
 
       - name: Upload Build Output Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: build-files-${{ matrix.arch }}
           path: hexchat-build
