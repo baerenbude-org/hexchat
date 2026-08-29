@@ -86,18 +86,22 @@ Ziel des Ports ist es, das vertraute, hochgradig konfigurierbare und performante
 
 ---
 
-## 📚 5. Correspondence with `.agents/` Workspace Structure
+## 📚 5. Correspondence with Workspace Structure & Roadmaps
 
-Diese `AGENTS.md` dient als Einstiegspunkt und verweist auf die vertiefenden Richtlinien und Checklisten im Projekt:
+Diese `AGENTS.md` dient als Einstiegspunkt und verweist auf die vertiefenden Richtlinien, Checklisten und Paritätsmatrizen im Projekt:
 
-- **Orientierungs-Index:** [`.agents/CONTEXT.md`](.agents/CONTEXT.md)
-- **Architektur & Schichten:** [`.agents/rules/architecture_and_layers.md`](.agents/rules/architecture_and_layers.md)
-- **C# & .NET 10 Coding-Standards:** [`.agents/rules/coding_standards_csharp.md`](.agents/rules/coding_standards_csharp.md)
-- **Avalonia UI Guidelines:** [`.agents/rules/avalonia_ui_guidelines.md`](.agents/rules/avalonia_ui_guidelines.md)
-- **IRC Protokoll & Test-Leitfaden:** [`.agents/rules/irc_protocol_and_testing.md`](.agents/rules/irc_protocol_and_testing.md)
-- **Pre-PR Checkliste:** [`.agents/checklists/pre-pr-checklist.md`](.agents/checklists/pre-pr-checklist.md)
-- **C-nach-Avalonia Portierungs-Checkliste:** [`.agents/checklists/porting-c-to-avalonia.md`](.agents/checklists/porting-c-to-avalonia.md)
-- **Troubleshooting & Fehlerbehebung:** [`.agents/troubleshooting/common-errors.md`](.agents/troubleshooting/common-errors.md)
-- **ADR Vorlage:** [`.agents/templates/adr-template.md`](.agents/templates/adr-template.md)
-- **ViewModel & View Vorlage:** [`.agents/templates/viewmodel-view-template.md`](.agents/templates/viewmodel-view-template.md)
-- **Dev-Workflow Skill:** [`.agents/skills/hexchat-dev-workflow/SKILL.md`](.agents/skills/hexchat-dev-workflow/SKILL.md)
+- **Master Roadmap & Dashboard:** [`ROADMAP.md`](file:///d:/Quelltext/hexchat/ROADMAP.md)
+- **Master Paritätsmatrix (C nach C#):** [`docs/PARITY_MATRIX.md`](file:///d:/Quelltext/hexchat/docs/PARITY_MATRIX.md)
+- **Befehls-Parität (70+ Slash-Commands):** [`docs/COMMANDS_PARITY.md`](file:///d:/Quelltext/hexchat/docs/COMMANDS_PARITY.md)
+- **Menü-, Dialog- & UI-Parität:** [`docs/MENUS_AND_UI_PARITY.md`](file:///d:/Quelltext/hexchat/docs/MENUS_AND_UI_PARITY.md)
+- **Orientierungs-Index:** [`.agents/CONTEXT.md`](file:///d:/Quelltext/hexchat/.agents/CONTEXT.md)
+- **Architektur & Schichten:** [`.agents/rules/architecture_and_layers.md`](file:///d:/Quelltext/hexchat/.agents/rules/architecture_and_layers.md)
+- **C# & .NET 10 Coding-Standards:** [`.agents/rules/coding_standards_csharp.md`](file:///d:/Quelltext/hexchat/.agents/rules/coding_standards_csharp.md)
+- **Avalonia UI Guidelines:** [`.agents/rules/avalonia_ui_guidelines.md`](file:///d:/Quelltext/hexchat/.agents/rules/avalonia_ui_guidelines.md)
+- **IRC Protokoll & Test-Leitfaden:** [`.agents/rules/irc_protocol_and_testing.md`](file:///d:/Quelltext/hexchat/.agents/rules/irc_protocol_and_testing.md)
+- **Pre-PR Checkliste:** [`.agents/checklists/pre-pr-checklist.md`](file:///d:/Quelltext/hexchat/.agents/checklists/pre-pr-checklist.md)
+- **C-nach-Avalonia Portierungs-Checkliste:** [`.agents/checklists/porting-c-to-avalonia.md`](file:///d:/Quelltext/hexchat/.agents/checklists/porting-c-to-avalonia.md)
+- **Troubleshooting & Fehlerbehebung:** [`.agents/troubleshooting/common-errors.md`](file:///d:/Quelltext/hexchat/.agents/troubleshooting/common-errors.md)
+- **ADR Vorlage:** [`.agents/templates/adr-template.md`](file:///d:/Quelltext/hexchat/.agents/templates/adr-template.md)
+- **ViewModel & View Vorlage:** [`.agents/templates/viewmodel-view-template.md`](file:///d:/Quelltext/hexchat/.agents/templates/viewmodel-view-template.md)
+- **Dev-Workflow Skill:** [`.agents/skills/hexchat-dev-workflow/SKILL.md`](file:///d:/Quelltext/hexchat/.agents/skills/hexchat-dev-workflow/SKILL.md)
