@@ -52,3 +52,25 @@ Wenn ein Dialog oder Feature aus dem originalen HexChat portiert wird:
 4. **Validieren:**
    - `dotnet test HexChat.sln`
    - Manueller Test über `dotnet run --project src/HexChat.Desktop/HexChat.Desktop.csproj`.
+
+---
+
+## 4. GitHub CI, PRs und Security-Status abfragen
+
+Wenn eine `.env`-Datei mit `GITHUB_TOKEN` vorhanden ist, können Status und Logs direkt via PowerShell abgefragt werden:
+
+```powershell
+# Neueste Actions-Runs anzeigen
+.\tools\Get-GitHubInfo.ps1 -Action runs
+
+# Logs und Schritte eines fehlgeschlagenen Runs inspizieren
+.\tools\Get-GitHubInfo.ps1 -Action run-logs -RunId <RUN_ID>
+
+# PRs oder Issues einsehen
+.\tools\Get-GitHubInfo.ps1 -Action prs
+.\tools\Get-GitHubInfo.ps1 -Action issues
+
+# Dependabot & Security Alerts prüfen
+.\tools\Get-GitHubInfo.ps1 -Action security
+```
+
