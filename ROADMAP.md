@@ -158,6 +158,7 @@ Zur lückenlosen Nachverfolgung aller Details existieren spezialisierte Parität
 
 | Dokument | Inhalt & Zweck |
 | :--- | :--- |
+| **[`FUTURE-PLAN.md`](FUTURE-PLAN.md)** | **Post-Port Zukunftsplan:** Strategische Weiterentwicklung des Clients nach dem Port mit vollem Fokus auf IRCv3-Standards. |
 | **[`docs/PARITY_MATRIX.md`](docs/PARITY_MATRIX.md)** | **Master-Paritätsmatrix:** Alle C-Quellcodedateien (`legacy/src/`) und Module gegenüber ihren C#-Gegenstücken. |
 | **[`docs/COMMANDS_PARITY.md`](docs/COMMANDS_PARITY.md)** | **Befehls-Parität:** Alle 70+ internen Slash-Befehle, Syntax, Flags und Implementierungsstatus. |
 | **[`docs/MENUS_AND_UI_PARITY.md`](docs/MENUS_AND_UI_PARITY.md)** | **Menü- & UI-Parität:** Vollständige Menüstruktur, Untermenüs, Tastenkürzel, Preferences-Tabs und Popups. |

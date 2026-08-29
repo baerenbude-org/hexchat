@@ -91,6 +91,7 @@ Ziel des Ports ist es, das vertraute, hochgradig konfigurierbare und performante
 Diese `AGENTS.md` dient als Einstiegspunkt und verweist auf die vertiefenden Richtlinien, Checklisten und Paritätsmatrizen im Projekt:
 
 - **Master Roadmap & Dashboard:** [`ROADMAP.md`](file:///d:/Quelltext/hexchat/ROADMAP.md)
+- **Post-Port Zukunftsplan (IRCv3):** [`FUTURE-PLAN.md`](file:///d:/Quelltext/hexchat/FUTURE-PLAN.md)
 - **Master Paritätsmatrix (C nach C#):** [`docs/PARITY_MATRIX.md`](file:///d:/Quelltext/hexchat/docs/PARITY_MATRIX.md)
 - **Befehls-Parität (70+ Slash-Commands):** [`docs/COMMANDS_PARITY.md`](file:///d:/Quelltext/hexchat/docs/COMMANDS_PARITY.md)
 - **Menü-, Dialog- & UI-Parität:** [`docs/MENUS_AND_UI_PARITY.md`](file:///d:/Quelltext/hexchat/docs/MENUS_AND_UI_PARITY.md)

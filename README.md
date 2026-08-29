@@ -23,6 +23,7 @@ Dieser Fork von **HexChat** portiert den beliebten, klassischen IRC-Client in ei
 Der gesamte Funktionsumfang von HexChat wird systematisch 1:1 portiert. Der aktuelle Fortschritt und detaillierte Checklisten sind hier einsehbar:
 
 - **[Master Roadmap & Dashboard](ROADMAP.md)** — Phasenplan (Phasen 1–7) & Status-Dashboard
+- **[Post-Port Zukunftsplan (IRCv3)](FUTURE-PLAN.md)** — Strategische Weiterentwicklung nach dem 1:1 Port
 - **[Master Paritätsmatrix](docs/PARITY_MATRIX.md)** — Lückenloser Abgleich aller C-Dateien mit C# / Avalonia 12
 - **[Befehls-Parität](docs/COMMANDS_PARITY.md)** — Alle 70+ internen Slash-Befehle und Parameter
 - **[Menü- & Dialog-Parität](docs/MENUS_AND_UI_PARITY.md)** — Alle Menüs, Tastenkürzel und 11 Preferences-Tabs

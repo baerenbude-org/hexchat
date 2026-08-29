@@ -14,6 +14,7 @@
 ### 1. Roadmap & Paritätsstatus einsehen
 
 - **Master Roadmap & Dashboard:** [`ROADMAP.md`](../ROADMAP.md) im Projekt-Hauptverzeichnis.
+- **Post-Port Zukunftsplan (IRCv3):** [`FUTURE-PLAN.md`](../FUTURE-PLAN.md)
 - **Master Paritätsmatrix (C nach C#):** [`docs/PARITY_MATRIX.md`](../docs/PARITY_MATRIX.md)
 - **Befehls-Parität (70+ Slash-Commands):** [`docs/COMMANDS_PARITY.md`](../docs/COMMANDS_PARITY.md)
 - **Menü-, Dialog- & UI-Parität:** [`docs/MENUS_AND_UI_PARITY.md`](../docs/MENUS_AND_UI_PARITY.md)
