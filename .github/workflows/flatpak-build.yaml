@@ -18,7 +18,7 @@ jobs:
       with:
         submodules: true
 
-    - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v3
+    - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v6
       with:
         bundle: hexchat.flatpak
         manifest-path: flatpak/io.github.Hexchat.json
