@@ -1,46 +1,55 @@
 name: MSYS2 Build
+
 on:
   push:
     branches:
       - master
+      - main
   pull_request:
     branches:
       - master
+      - main
 
 jobs:
   msys2_build:
+    name: MSYS2 MinGW64 Build
     runs-on: windows-latest
     defaults:
       run:
         shell: msys2 {0}
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      - uses: msys2/setup-msys2@v2
+      - name: Setup MSYS2
+        uses: msys2/setup-msys2@v2
         with:
+          msystem: MINGW64
+          update: true
           install: >-
             mingw-w64-x86_64-gcc
             mingw-w64-x86_64-pkg-config
-            mingw-w64-x86_64-python3-cffi
+            mingw-w64-x86_64-python-cffi
             mingw-w64-x86_64-meson
+            mingw-w64-x86_64-ninja
             mingw-w64-x86_64-gtk2
             mingw-w64-x86_64-gtk-update-icon-cache
             mingw-w64-x86_64-luajit
             mingw-w64-x86_64-desktop-file-utils
 
-      - name: Configure
+      - name: Configure Meson
         run: >-
-          meson build
+          meson setup build
           -Dtext-frontend=true
           -Ddbus=disabled
           -Dwith-upd=false
           -Dwith-perl=false
 
-      - name: Build
+      - name: Build with Ninja
         run: ninja -C build
 
-      - name: Test
+      - name: Run Tests
         run: ninja -C build test
 
       - name: Install

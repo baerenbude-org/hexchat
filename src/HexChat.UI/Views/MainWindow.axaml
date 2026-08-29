@@ -82,20 +82,20 @@
                                         <!-- Timestamp -->
                                         <TextBlock Grid.Column="0"
                                                    Text="{Binding Timestamp, StringFormat='HH:mm:ss'}"
-                                                   Foreground="#555566" FontFamily="Consolas, Monospace" FontSize="11" Margin="0,0,8,0" VerticalAlignment="Top" />
+                                                   Foreground="#656578" FontFamily="Consolas, Monospace" FontSize="11" Margin="0,0,8,0" VerticalAlignment="Top" />
 
                                         <!-- Sender Nick or System Tag -->
                                         <TextBlock Grid.Column="1"
                                                    Text="{Binding Sender, StringFormat='&lt;{0}&gt;'}"
                                                    FontWeight="SemiBold"
-                                                   Foreground="{Binding IsSystemNotice, Converter={x:Static ObjectConverters.IsNotNull}}"
+                                                   Foreground="#38BDF8"
                                                    Margin="0,0,8,0" VerticalAlignment="Top" />
 
                                         <!-- Message Text Content -->
                                         <SelectableTextBlock Grid.Column="2"
                                                              Text="{Binding Text}"
                                                              TextWrapping="Wrap"
-                                                             Foreground="{Binding IsHighlight, Converter={x:Static ObjectConverters.IsNotNull}}"
+                                                             Foreground="#E2E8F0"
                                                              FontFamily="Segoe UI, Inter, sans-serif" FontSize="13" />
                                     </Grid>
                                 </DataTemplate>
@@ -132,7 +132,7 @@
             <Grid ColumnDefinitions="*, Auto">
                 <TextBox Grid.Column="0"
                          Text="{Binding InputText, Mode=TwoWay}"
-                         Watermark="Nachricht eingeben oder /befehl (/join, /part, /msg, /me, /raw)..."
+                         PlaceholderText="Nachricht eingeben oder /befehl (/join, /part, /msg, /me, /raw)..."
                          Margin="0,0,8,0" Height="32">
                     <TextBox.KeyBindings>
                         <KeyBinding Gesture="Enter" Command="{Binding SendMessageCommand}" />

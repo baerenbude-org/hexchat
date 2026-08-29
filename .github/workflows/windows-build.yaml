@@ -1,15 +1,19 @@
 name: Windows Build
+
 on:
   push:
     branches:
       - master
+      - main
   pull_request:
     branches:
       - master
+      - main
 
 jobs:
   windows_build:
-    runs-on: windows-2019
+    name: Windows MSVC Build (${{ matrix.platform }})
+    runs-on: windows-2022
     strategy:
       matrix:
         platform: [x64, win32]
@@ -22,54 +26,67 @@ jobs:
       fail-fast: false
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      - name: Install Dependencies
+      - name: Setup MSVC Developer Command Prompt
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: ${{ matrix.arch }}
+
+      - name: Install Dependencies & Toolchains
         run: |
-          New-Item -Name "deps" -ItemType "Directory"
+          New-Item -Name "deps" -ItemType "Directory" -Force
 
-          Invoke-WebRequest http://files.jrsoftware.org/is/5/innosetup-5.5.9-unicode.exe -OutFile deps\innosetup-unicode.exe
+          Invoke-WebRequest "http://files.jrsoftware.org/is/5/innosetup-5.5.9-unicode.exe" -OutFile deps\innosetup-unicode.exe
           & deps\innosetup-unicode.exe /VERYSILENT | Out-Null
 
-          Invoke-WebRequest https://github.com/hexchat/gvsbuild/releases/download/hexchat-2.16.2/idpsetup-1.5.1.exe -OutFile deps\idpsetup.exe
+          Invoke-WebRequest "https://github.com/hexchat/gvsbuild/releases/download/hexchat-2.16.2/idpsetup-1.5.1.exe" -OutFile deps\idpsetup.exe
           & deps\idpsetup.exe /VERYSILENT
 
-          Invoke-WebRequest https://github.com/hexchat/gvsbuild/releases/download/hexchat-2.16.2/gtk-${{ matrix.platform }}-2018-08-29-openssl1.1.7z -OutFile deps\gtk-${{ matrix.arch }}.7z
+          Invoke-WebRequest "https://github.com/hexchat/gvsbuild/releases/download/hexchat-2.16.2/gtk-${{ matrix.platform }}-2018-08-29-openssl1.1.7z" -OutFile deps\gtk-${{ matrix.arch }}.7z
           & 7z.exe x deps\gtk-${{ matrix.arch }}.7z -oC:\gtk-build\gtk
 
-          Invoke-WebRequest https://github.com/hexchat/gvsbuild/releases/download/hexchat-2.16.2/gendef-20111031.7z -OutFile deps\gendef.7z
+          Invoke-WebRequest "https://github.com/hexchat/gvsbuild/releases/download/hexchat-2.16.2/gendef-20111031.7z" -OutFile deps\gendef.7z
           & 7z.exe x deps\gendef.7z -oC:\gtk-build
 
-          Invoke-WebRequest https://github.com/hexchat/gvsbuild/releases/download/hexchat-2.16.2/WinSparkle-20151011.7z -OutFile deps\WinSparkle.7z
+          Invoke-WebRequest "https://github.com/hexchat/gvsbuild/releases/download/hexchat-2.16.2/WinSparkle-20151011.7z" -OutFile deps\WinSparkle.7z
           & 7z.exe x deps\WinSparkle.7z -oC:\gtk-build\WinSparkle
 
-          Invoke-WebRequest https://github.com/hexchat/gvsbuild/releases/download/hexchat-2.16.2/perl-5.20.0-${{ matrix.arch }}.7z -OutFile deps\perl-${{ matrix.arch }}.7z
+          Invoke-WebRequest "https://github.com/hexchat/gvsbuild/releases/download/hexchat-2.16.2/perl-5.20.0-${{ matrix.arch }}.7z" -OutFile deps\perl-${{ matrix.arch }}.7z
           & 7z.exe x deps\perl-${{ matrix.arch }}.7z -oC:\gtk-build\perl-5.20\${{ matrix.platform }}
 
-          New-Item -Path "c:\gtk-build" -Name "python-3.8" -ItemType "Directory"
-          New-Item -Path "c:\gtk-build\python-3.8" -Name "${{ matrix.platform }}" -ItemType "SymbolicLink" -Value "C:/hostedtoolcache/windows/Python/3.8.10/${{ matrix.arch }}"
+          New-Item -Path "C:\gtk-build" -Name "python-3.8" -ItemType "Directory" -Force
+          New-Item -Path "C:\gtk-build\python-3.8" -Name "${{ matrix.platform }}" -ItemType "SymbolicLink" -Value "C:/hostedtoolcache/windows/Python/3.8.10/${{ matrix.arch }}" -Force -ErrorAction SilentlyContinue
 
-          C:/hostedtoolcache/windows/Python/3.8.10/${{ matrix.arch }}/python.exe -m pip install cffi
+          pip install cffi
         shell: powershell
 
-      - name: Build
+      - name: Build with MSBuild
         run: |
-          call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
           msbuild win32\hexchat.sln /m /verbosity:minimal /p:Configuration=Release /p:Platform=${{ matrix.platform }}
         shell: cmd
 
-      - name: Preparing Artifacts
+      - name: Prepare Artifacts
         run: |
-          move ..\hexchat-build\${{ matrix.platform }}\HexChat*.exe .\
-          move ..\hexchat-build .\
+          if exist "..\hexchat-build\${{ matrix.platform }}\HexChat*.exe" (
+            move ..\hexchat-build\${{ matrix.platform }}\HexChat*.exe .\
+          )
+          if exist "..\hexchat-build" (
+            move ..\hexchat-build .\
+          )
         shell: cmd
 
-      - uses: actions/upload-artifact@v2
+      - name: Upload Installer Artifact
+        uses: actions/upload-artifact@v4
         with:
-          name: Installer ${{ matrix.arch }}
+          name: installer-${{ matrix.arch }}
           path: HexChat*.exe
+          if-no-files-found: warn
 
-      - uses: actions/upload-artifact@v2
+      - name: Upload Build Output Artifact
+        uses: actions/upload-artifact@v4
         with:
-          name: Build Files ${{ matrix.arch  }}
+          name: build-files-${{ matrix.arch }}
           path: hexchat-build
+          if-no-files-found: warn

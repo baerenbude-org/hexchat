@@ -1,0 +1,67 @@
+# Yamllint configuration for HexChat
+# https://yamllint.readthedocs.io/
+
+extends: default
+
+rules:
+  # Kein zwingendes "---" am Dateianfang
+  document-start: disable
+
+  # Workflows, Issue Templates und Matrix-Builds können lange Zeilen enthalten
+  line-length:
+    max: 180
+    level: warning
+    allow-non-breakable-words: true
+    allow-non-breakable-inline-mappings: true
+
+  # Einheitliche 2-Space Einrückung
+  indentation:
+    spaces: 2
+    indent-sequences: true
+    check-multi-line-strings: false
+
+  # Kommentare: Mindestens 1 Leerzeichen Abstand zum Code
+  comments:
+    min-spaces-from-content: 1
+    require-starting-space: true
+
+  # Keine überflüssigen Leerzeichen am Zeilenende
+  trailing-spaces: enable
+
+  # Leerzeilen regeln (max. 2 aufeinanderfolgende Leerzeilen)
+  empty-lines:
+    max: 2
+    max-start: 0
+    max-end: 1
+
+  # Wahrheitswerte in CI-Konfigurationen
+  truthy:
+    level: warning
+    allowed-values:
+      - "true"
+      - "false"
+      - "yes"
+      - "no"
+      - "on"
+      - "off"
+
+  # Keine doppelten Keys im selben Block
+  key-duplicates: enable
+
+  # Klammern-Abstände
+  brackets:
+    min-spaces-inside: 0
+    max-spaces-inside: 0
+  braces:
+    min-spaces-inside: 0
+    max-spaces-inside: 0
+  colons:
+    max-spaces-before: 0
+    max-spaces-after: 1
+
+ignore: |
+  .git/
+  bin/
+  obj/
+  build/
+  builddir/

@@ -1,4 +1,35 @@
-# Build directories
+# ==============================================================================
+# .NET / C# / Visual Studio / Rider
+# ==============================================================================
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+ARM64/
+[Tt]est[Rr]esults/
+.coverage
+*.coverage
+*.coveragexml
+*.dotCover
+coverage.opencover.xml
+.vs/
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+*.userprefs
+*.rsuser
+.idea/
+.ionide/
+*.VisualState.xml
+*.pidb
+*.booproj
+
+# ==============================================================================
+# C / C++ / Native Build directories & Artifacts
+# ==============================================================================
 /build/
 /builddir/
 /_build/
@@ -10,6 +41,26 @@ meson-logs/
 compile_commands.json
 .ninja_deps
 .ninja_log
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
+*.vcxproj.user
+*.tlog
+*.idb
+*.pdb
+*.ilk
+ipch/
+win32/ipch/*
+win32/installer/hexchat.iss
+win32/ext/perl/perl-x86-cache
+win32/ext/perl/perl-x86-SetupFiles
+win32/ext/perl/perl-x64-cache
+win32/ext/perl/perl-x64-SetupFiles
+resource.h
+plugins/wmpa/wmpa_h.h
+plugins/wmpa/wmpa_i.c
+src/htm/obj/*
 
 # Compiled Object files and libraries
 *.o
@@ -35,35 +86,9 @@ compile_commands.json
 osx/HexChat.app
 osx/.HexChat.app
 
-# .NET & Visual Studio generated files
-[Bb]in/
-[Oo]bj/
-.vs/
-*.opensdf
-*.sdf
-*.suo
-*.user
-*.VC.db
-*.VC.opendb
-*.vcxproj.user
-*.tlog
-*.idb
-*.pdb
-*.ilk
-ipch/
-win32/ipch/*
-win32/installer/hexchat.iss
-win32/ext/perl/perl-x86-cache
-win32/ext/perl/perl-x86-SetupFiles
-win32/ext/perl/perl-x64-cache
-win32/ext/perl/perl-x64-SetupFiles
-resource.h
-plugins/wmpa/wmpa_h.h
-plugins/wmpa/wmpa_i.c
-src/htm/obj/*
-
+# ==============================================================================
 # IDEs and Editors
-.idea/
+# ==============================================================================
 cmake-build-*/
 *.swp
 *.swo
@@ -80,7 +105,9 @@ cmake-build-*/
 .vscode/*.log
 .vscode/.browse.*
 
+# ==============================================================================
 # Python artifacts
+# ==============================================================================
 __pycache__/
 *.py[cod]
 *$py.class
@@ -90,14 +117,18 @@ __pycache__/
 venv/
 env/
 
+# ==============================================================================
 # Gettext / Localization generated files
+# ==============================================================================
 *.gmo
 *.mo
 po/*.gmo
 po/stamp-po
 po/.intltool-merge-cache
 
+# ==============================================================================
 # Documentation & temporary outputs
+# ==============================================================================
 doxygen*.tmp
 html/
 latex/
@@ -105,13 +136,17 @@ latex/
 tags
 TAGS
 
+# ==============================================================================
 # Code Coverage & Profiling
+# ==============================================================================
 *.gcno
 *.gcda
 *.gcov
 gmon.out
 
+# ==============================================================================
 # Operating System files
+# ==============================================================================
 .DS_Store
 .DS_Store?
 ._*

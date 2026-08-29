@@ -1,11 +1,9 @@
 {
   "recommendations": [
-    "mesonbuild.mesonbuild",
-    "ms-vscode.cpptools",
-    "xaver.clang-format",
-    "ms-python.python",
-    "tamasfe.even-better-toml",
     "AvaloniaTeam.vscode-avalonia",
-    "ms-dotnettools.csharp"
+    "ms-dotnettools.csharp",
+    "ms-dotnettools.csdevkit",
+    "redhat.vscode-yaml",
+    "tamasfe.even-better-toml"
   ]
 }

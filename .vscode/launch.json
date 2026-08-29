@@ -2,57 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "HexChat (Linux/GDB)",
-      "type": "cppdbg",
-      "request": "launch",
-      "program": "${workspaceFolder}/build/src/fe-gtk/hexchat",
-      "args": ["--no-auto", "--debug"],
-      "stopAtEntry": false,
-      "cwd": "${workspaceFolder}",
-      "environment": [],
-      "externalConsole": false,
-      "MIMode": "gdb",
-      "setupCommands": [
-        {
-          "description": "Enable pretty-printing for gdb",
-          "text": "-enable-pretty-printing",
-          "ignoreFailures": true
-        }
-      ],
-      "preLaunchTask": "Ninja: Build"
-    },
-    {
-      "name": "HexChat Text Frontend (Linux/GDB)",
-      "type": "cppdbg",
-      "request": "launch",
-      "program": "${workspaceFolder}/build/src/fe-text/hexchat-text",
-      "args": ["--no-auto", "--debug"],
-      "stopAtEntry": false,
-      "cwd": "${workspaceFolder}",
-      "environment": [],
-      "externalConsole": false,
-      "MIMode": "gdb",
-      "setupCommands": [
-        {
-          "description": "Enable pretty-printing for gdb",
-          "text": "-enable-pretty-printing",
-          "ignoreFailures": true
-        }
-      ],
-      "preLaunchTask": "Ninja: Build"
-    },
-    {
-      "name": "HexChat (Windows/MSVC)",
-      "type": "cppvsdbg",
-      "request": "launch",
-      "program": "${workspaceFolder}/win32/x64/Release/hexchat.exe",
-      "args": ["--no-auto", "--debug"],
-      "stopAtEntry": false,
-      "cwd": "${workspaceFolder}",
-      "environment": []
-    },
-    {
-      "name": ".NET: HexChat.Desktop (Avalonia)",
+      "name": "HexChat Desktop (Avalonia .NET)",
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": ".NET: Build HexChat.sln",

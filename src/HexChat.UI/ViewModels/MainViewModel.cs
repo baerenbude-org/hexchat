@@ -72,6 +72,24 @@ public sealed partial class MainViewModel : ViewModelBase
     {
         // Add Server buffer as default
         var serverItem = new ChannelItemViewModel(_client.ServerBuffer);
+        var welcomeMsg1 = new ChatMessage(
+            DateTimeOffset.Now,
+            "HexChat",
+            "Willkommen bei HexChat (Avalonia Port)!",
+            Array.Empty<FormattedSpan>(),
+            IsSystemNotice: true);
+        var welcomeMsg2 = new ChatMessage(
+            DateTimeOffset.Now,
+            "HexChat",
+            "Gib oben deine Verbindungsdaten ein und klicke auf 'Verbinden' oder nutze IRC-Befehle wie /join #kanal oder /help.",
+            Array.Empty<FormattedSpan>(),
+            IsSystemNotice: true);
+
+        _client.ServerBuffer.AddMessage(welcomeMsg1);
+        _client.ServerBuffer.AddMessage(welcomeMsg2);
+        serverItem.Messages.Add(welcomeMsg1);
+        serverItem.Messages.Add(welcomeMsg2);
+
         Channels.Add(serverItem);
         SelectedChannel = serverItem;
 

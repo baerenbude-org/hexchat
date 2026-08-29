@@ -1,0 +1,41 @@
+name: .NET & Avalonia CI
+
+on:
+  push:
+    branches:
+      - master
+      - main
+  pull_request:
+    branches:
+      - master
+      - main
+
+jobs:
+  build_and_test:
+    name: Build & Test (.NET 10)
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+      fail-fast: false
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            9.0.x
+            10.0.x
+
+      - name: Restore Dependencies
+        run: dotnet restore HexChat.sln
+
+      - name: Build HexChat Solution
+        run: dotnet build HexChat.sln --configuration Release --no-restore
+
+      - name: Run Unit Tests
+        run: dotnet test HexChat.sln --configuration Release --no-build --verbosity normal
