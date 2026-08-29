@@ -1,0 +1,23 @@
+---
+# HexChat Clang-Tidy Configuration
+Checks: >
+  -*,
+  bugprone-*,
+  -bugprone-macro-parentheses,
+  clang-analyzer-*,
+  -clang-analyzer-security.insecureAPI.strcpy,
+  -clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling,
+  concurrency-*,
+  misc-*,
+  -misc-no-recursion,
+  performance-*,
+  readability-*,
+  -readability-identifier-length,
+  -readability-function-cognitive-complexity,
+  -readability-isolate-declaration,
+  -readability-magic-numbers
+
+WarningsAsErrors: ''
+HeaderFilterRegex: 'src/.*|plugins/.*'
+FormatStyle: file
+...

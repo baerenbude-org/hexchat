@@ -1,0 +1,77 @@
+name: "🐛 Bug Report"
+description: "Erstelle einen Fehlerbericht, um Probleme in HexChat zu beheben"
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Vielen Dank für das Melden eines Fehlers im HexChat-Fork! Bitte fülle die folgenden Felder möglichst genau aus.
+  - type: input
+    id: version
+    attributes:
+      label: HexChat Version / Commit
+      description: Welche Version oder welcher Git-Commit wird verwendet? (z.B. HexChat 2.16.2 / git-commit-hash)
+      placeholder: "z. B. v2.16.2-fork oder git rev-parse HEAD"
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Betriebssystem
+      description: Auf welchem Betriebssystem tritt der Fehler auf?
+      options:
+        - "Linux (Flatpak)"
+        - "Linux (Distribution Package / Native)"
+        - "Windows (MSVC / Official Installer)"
+        - "Windows (MSYS2 / MinGW)"
+        - "macOS"
+        - "Anderes"
+    validations:
+      required: true
+  - type: input
+    id: os_details
+    attributes:
+      label: OS-Details & Desktop-Umgebung
+      description: Genaue Distribution, Windows-Version, Desktop-Environment (z. B. GNOME, KDE, XFCE, Windows 11).
+      placeholder: "z. B. Fedora 40 GNOME 46 oder Windows 11 23H2"
+    validations:
+      required: false
+  - type: input
+    id: irc_network
+    attributes:
+      label: IRC-Netzwerk / BNC / Server
+      description: Welches IRC-Netzwerk oder welcher IRC-Server (z. B. Libera.Chat, OFTC, ZNC) wurde genutzt?
+      placeholder: "z. B. Libera.Chat (SASL PLAIN, TLS 6697) oder ZNC"
+  - type: textarea
+    id: description
+    attributes:
+      label: Fehlerbeschreibung
+      description: Eine klare und präzise Beschreibung des aufgetretenen Fehlers.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Schritte zur Reproduktion
+      description: Wie lässt sich der Fehler Schritt für Schritt nachstellen?
+      placeholder: |
+        1. HexChat starten
+        2. Verbinden mit Server '...'
+        3. Befehl '/...' eingeben
+        4. Beobachtetes Verhalten: ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Erwartetes Verhalten
+      description: Was sollte stattdessen passieren?
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Konsolenausgabe / Debug-Log / Crash-Backtrace
+      description: Falls vorhanden, bitte Debug-Logs (z. B. `hexchat --debug` oder GDB Backtrace `bt full`) einfügen.
+      render: shell

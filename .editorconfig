@@ -1,19 +1,61 @@
-# EditorConfig is awesome: http://EditorConfig.org
+# EditorConfig configuration for HexChat
+# http://EditorConfig.org
 
-# top-most EditorConfig file
 root = true
 
+# Default settings for all files
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# C / C++ / Objective-C source and header files
 [*.{c,cpp,h,hpp,m}]
 indent_style = tab
 indent_size = 4
-end_of_line = lf
+tab_width = 4
 
+# C# source files
 [*.cs]
 indent_style = space
 indent_size = 4
-end_of_line = lf
 
-[{meson.build,meson_options.txt}]
-indent_size = 2
+# Python scripts
+[*.{py,pyi}]
 indent_style = space
-insert_final_newline = true
+indent_size = 4
+
+# Meson build definitions
+[{meson.build,meson_options.txt,fedora-mingw64.ini}]
+indent_style = space
+indent_size = 2
+
+# Data formats (JSON, YAML)
+[*.{json,yaml,yml}]
+indent_style = space
+indent_size = 2
+
+# XML and AppData files
+[*.{xml,gresource.xml,metainfo.xml,appdata.xml,svg}]
+indent_style = space
+indent_size = 2
+
+# Markdown documentation
+[*.{md,markdown}]
+trim_trailing_whitespace = false
+
+# Shell scripts
+[*.{sh,bash}]
+indent_style = space
+indent_size = 2
+
+# Windows specific files
+[*.{bat,cmd,ps1,iss}]
+end_of_line = crlf
+
+# Makefiles & Doxyfile
+[{Makefile,*.mk,Doxyfile}]
+indent_style = tab
+indent_size = 4
+tab_width = 4

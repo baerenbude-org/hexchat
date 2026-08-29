@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F60E5C23-121C-473A-8604-D78AC29BF6D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexChat.Core", "src\HexChat.Core\HexChat.Core.csproj", "{7662CB73-32B3-4F46-9446-038D2F23F635}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{FE8D76EA-7B52-42D4-AABD-BDF6866B2574}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexChat.Core.Tests", "tests\HexChat.Core.Tests\HexChat.Core.Tests.csproj", "{D378FA00-F854-4337-9DD2-C70F02EFF529}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexChat.UI", "src\HexChat.UI\HexChat.UI.csproj", "{FA003E0D-643F-43FB-BB4E-86E81A85D458}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexChat.Desktop", "src\HexChat.Desktop\HexChat.Desktop.csproj", "{D429A8C7-EF85-4CC0-B7AB-D93D29EB82B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7662CB73-32B3-4F46-9446-038D2F23F635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7662CB73-32B3-4F46-9446-038D2F23F635}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7662CB73-32B3-4F46-9446-038D2F23F635}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7662CB73-32B3-4F46-9446-038D2F23F635}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D378FA00-F854-4337-9DD2-C70F02EFF529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D378FA00-F854-4337-9DD2-C70F02EFF529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D378FA00-F854-4337-9DD2-C70F02EFF529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D378FA00-F854-4337-9DD2-C70F02EFF529}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA003E0D-643F-43FB-BB4E-86E81A85D458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA003E0D-643F-43FB-BB4E-86E81A85D458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA003E0D-643F-43FB-BB4E-86E81A85D458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA003E0D-643F-43FB-BB4E-86E81A85D458}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D429A8C7-EF85-4CC0-B7AB-D93D29EB82B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D429A8C7-EF85-4CC0-B7AB-D93D29EB82B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D429A8C7-EF85-4CC0-B7AB-D93D29EB82B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D429A8C7-EF85-4CC0-B7AB-D93D29EB82B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7662CB73-32B3-4F46-9446-038D2F23F635} = {F60E5C23-121C-473A-8604-D78AC29BF6D8}
+		{D378FA00-F854-4337-9DD2-C70F02EFF529} = {FE8D76EA-7B52-42D4-AABD-BDF6866B2574}
+		{FA003E0D-643F-43FB-BB4E-86E81A85D458} = {F60E5C23-121C-473A-8604-D78AC29BF6D8}
+		{D429A8C7-EF85-4CC0-B7AB-D93D29EB82B8} = {F60E5C23-121C-473A-8604-D78AC29BF6D8}
+	EndGlobalSection
+EndGlobal

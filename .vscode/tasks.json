@@ -1,0 +1,65 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Meson: Setup",
+      "type": "shell",
+      "command": "meson setup build -Dtext-frontend=true -Dtheme-manager=true",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Ninja: Build",
+      "type": "shell",
+      "command": "ninja -C build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Ninja: Test",
+      "type": "shell",
+      "command": "ninja -C build test",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Ninja: Clean",
+      "type": "shell",
+      "command": "ninja -C build clean",
+      "problemMatcher": []
+    },
+    {
+      "label": "MSBuild: Build (Windows)",
+      "type": "shell",
+      "command": "msbuild win32/hexchat.sln /p:Configuration=Release /p:Platform=x64",
+      "group": "build",
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": ".NET: Build HexChat.sln",
+      "type": "shell",
+      "command": "dotnet build HexChat.sln",
+      "group": "build",
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": ".NET: Run Tests",
+      "type": "shell",
+      "command": "dotnet test HexChat.sln",
+      "group": "test",
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": ".NET: Run HexChat.Desktop (Avalonia)",
+      "type": "shell",
+      "command": "dotnet run --project src/HexChat.Desktop/HexChat.Desktop.csproj",
+      "problemMatcher": []
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+name: "✨ Feature Request / Verbesserungsvorschlag"
+description: "Schlage eine neue Funktion, ein Plugin oder eine Verbesserung für HexChat vor"
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Vielen Dank für deine Idee zur Weiterentwicklung von HexChat!
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problemstellung / Motivation
+      description: Welches Problem soll gelöst werden oder welcher Anwendungsfall fehlt aktuell?
+      placeholder: "Es ist aktuell umständlich, wenn..."
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Vorgeschlagene Lösung
+      description: Wie stellst du dir die Umsetzung oder das neue Verhalten vor?
+      placeholder: "HexChat sollte die Option bieten, ..."
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativen oder bestehende Workarounds
+      description: Gibt es bereits alternative Ansätze, Plugins oder Skripte, die du ausprobiert hast?
+    validations:
+      required: false
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Zusätzlicher Kontext / Referenzen
+      description: Links zu Spezifikationen (z. B. IRCv3 Specs), Screenshots oder Beispielen aus anderen IRC-Clients.
+    validations:
+      required: false
