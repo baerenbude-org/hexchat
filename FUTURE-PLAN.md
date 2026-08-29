@@ -5,7 +5,7 @@
 # 🚀 HexChat Future Plan — Post-Port Evolution & IRCv3 Integration
 
 > **Strategischer Entwicklungsplan für die Weiterentwicklung nach erfolgreicher Fertigstellung des 1:1 HexChat-Ports**  
-> Projekt-Baseline: **HexChat (.NET 10 & Avalonia UI 12)** | Ausrichtung: **[IRCv3 Working Group Standards](https://ircv3.net)** | Zielversion: **v3.0+**
+> Projekt-Baseline: **HexChat (.NET 10 & Avalonia UI 12)** | Primärquelle: **[Modern IRC Protocol & Client Specs (ircv3.net/irc)](https://ircv3.net/irc/)** | Zielversion: **v3.0+**
 
 ---
 
@@ -15,13 +15,15 @@
 > **Prioritäts-Klarstellung:**
 >
 > 1. **Phase 1 bis 7 ([`ROADMAP.md`](file:///d:/Quelltext/hexchat/ROADMAP.md)):** Absolute Priorität hat die **vollständige, lückenlose 1:1 Portierung** des klassischen HexChat-Clients von C/GTK auf .NET 10 und Avalonia UI 12. Alle Menüs, Dialoge, 70+ Slash-Commands und Konfigurationsoptionen müssen paritär funktionieren.
-> 2. **Nach erfolgreichem Port (Post-v2.x / v3.0+):** Nach Erreichen der vollständigen Parität schlägt dieses Projekt den Weg eines **modernen, zukunftssicheren Next-Gen IRC-Clients** ein, der sich strikt an den Standards und Spezifikationen der **IRCv3 Working Group** und modernen IRC-Server-Entwicklungen (z. B. Ergo, InspIRCd, UnrealIRCd, Soju, ZNC) orientiert.
+> 2. **Nach erfolgreichem Port (Post-v2.x / v3.0+):** Nach Erreichen der vollständigen Parität schlägt dieses Projekt den Weg eines **modernen, zukunftssicheren Next-Gen IRC-Clients** ein, der sich strikt an den Standards und Spezifikationen der **[IRCv3 Working Group (ircv3.net/irc)](https://ircv3.net/irc/)** und modernen IRC-Server-Entwicklungen (z. B. Ergo, InspIRCd, UnrealIRCd, Soju, ZNC) orientiert.
 
 ---
 
 ## 🌐 2. Kern-Fokus: Umfassende IRCv3-Unterstützung
 
-Das IRCv3-Projekt modernisiert das klassische RFC 1459/2812 Protokoll. Nach dem Basis-Port wird HexChat zu einem der modernsten IRCv3-kompatiblen Desktop-Clients ausgebaut:
+Als maßgebliche Richtschnur und normative Spezifikationsquelle für das Verhalten und die Schnittstellen des Clients dient die Spezifikationssammlung unter **[https://ircv3.net/irc/](https://ircv3.net/irc/)** (Modern IRC Client Protocol & Extension Registry).
+
+Das IRCv3-Projekt modernisiert das klassische RFC 1459/2812 Protokoll grundlegend. Nach dem Basis-Port wird HexChat zu einem der modernsten IRCv3-kompatiblen Desktop-Clients ausgebaut:
 
 ```mermaid
 graph TD
@@ -95,3 +97,11 @@ Neben den Protokoll-Spezifikationen von IRCv3 sind folgende architektonische Wei
 - **Paritätsmatrix:** [`docs/PARITY_MATRIX.md`](file:///d:/Quelltext/hexchat/docs/PARITY_MATRIX.md) — Tracking des bestehenden C-Codes.
 - **Befehls-Parität:** [`docs/COMMANDS_PARITY.md`](file:///d:/Quelltext/hexchat/docs/COMMANDS_PARITY.md) — Katalog der bestehenden 70+ Slash-Commands.
 - **Regelwerk:** [`AGENTS.md`](file:///d:/Quelltext/hexchat/AGENTS.md) & [`.agents/CONTEXT.md`](file:///d:/Quelltext/hexchat/.agents/CONTEXT.md) — Orientierung für Entwickler und KI-Assistenten.
+
+---
+
+## 📚 5. Primärquellen & Spezifikations-Referenzen
+
+- **[Modern IRC Protocol & Client Specs (ircv3.net/irc)](https://ircv3.net/irc/)** — Die offizielle, maßgebliche Hauptquelle für moderne IRC-Client-Implementierung, IRCv3-Extensions, Message-Tags und Standard-Replies.
+- **[IRCv3 Specification Extensions Registry](https://ircv3.net/specs/extensions/)** — Detaillierte Spezifikationen für Capabilities, Batches und Draft-Standards.
+- **[Modern IRC Client Guide (ircdocs.horse)](https://modern.ircdocs.horse/)** — Praxisnaher Leitfaden für IRC-Entwickler zur Handhabung von Numerics, ISUPPORT und Formatting.
